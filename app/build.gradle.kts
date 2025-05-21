@@ -2,6 +2,7 @@ plugins {
     id(libs.plugins.android.application.get().pluginId)
     id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.kotlin.compose.get().pluginId)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -46,6 +47,8 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.appcompat)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 
     implementation(project(":authentication"))
 }
