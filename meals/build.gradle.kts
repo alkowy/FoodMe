@@ -1,10 +1,10 @@
 plugins {
-    id("base-module-config")
     alias(libs.plugins.kotlin.compose)
+    id("base-module-config")
 }
 
 android {
-    namespace = "com.azmarzly.authentication"
+    namespace = "com.azmarzly.meals"
 }
 
 dependencies {

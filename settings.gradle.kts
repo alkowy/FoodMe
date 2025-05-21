@@ -23,3 +23,5 @@ rootProject.name = "FoodMe"
 
 include(":app")
 include(":authentication")
+include(":core")
+include(":meals")

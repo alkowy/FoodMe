@@ -51,4 +51,6 @@ dependencies {
     implementation(libs.firebase.analytics)
 
     implementation(project(":authentication"))
+    implementation(project(":core"))
+    implementation(project(":meals"))
 }
