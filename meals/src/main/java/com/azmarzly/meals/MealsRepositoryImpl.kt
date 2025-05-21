@@ -21,7 +21,7 @@ class MealsRepositoryImpl : MealsRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getMealDetails(mealId: String): Resource<Meal?> {
+    override suspend fun getMealById(mealId: String): Resource<Meal?> {
         TODO("Not yet implemented")
     }
 }
