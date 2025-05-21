@@ -3,6 +3,8 @@ plugins {
     id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.kotlin.compose.get().pluginId)
     id("com.google.gms.google-services")
+    id(libs.plugins.devtools.ksp.get().pluginId)
+    id(libs.plugins.hilt.get().pluginId)
 }
 
 android {
@@ -41,6 +43,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":authentication"))
+    implementation(project(":core"))
+    implementation(project(":meals"))
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -50,7 +56,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
-    implementation(project(":authentication"))
-    implementation(project(":core"))
-    implementation(project(":meals"))
+    implementation(libs.hilt)
+    ksp(libs.hilt.ksp)
 }

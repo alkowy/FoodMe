@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
 }
 
 internal val Project.libs: VersionCatalog
@@ -54,6 +56,8 @@ dependencies {
     implementation(libs.findLibrary("androidx-ui-tooling").get())
     implementation(libs.findLibrary("androidx-ui-tooling-preview").get())
     implementation(libs.findLibrary("androidx-material3").get())
+    implementation(libs.findLibrary("hilt").get())
+    ksp(libs.findLibrary("hilt-ksp").get())
 
     implementation(libs.findLibrary("androidx-appcompat").get())
 }
