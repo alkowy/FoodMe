@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.findLibrary("androidx-ui-tooling").get())
     implementation(libs.findLibrary("androidx-ui-tooling-preview").get())
     implementation(libs.findLibrary("androidx-material3").get())
+
     implementation(libs.findLibrary("hilt").get())
     ksp(libs.findLibrary("hilt-ksp").get())
 

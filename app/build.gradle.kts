@@ -14,6 +14,8 @@ android {
     defaultConfig {
         minSdk = 28
         targetSdk = 35
+        versionCode = 1
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,6 +57,11 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+
+    //todo probably remove
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.identity.googleid)
 
     implementation(libs.hilt)
     ksp(libs.hilt.ksp)

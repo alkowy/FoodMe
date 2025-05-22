@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.azmarzly.authentication.ui.AuthenticationButton
 import com.azmarzly.foodme.ui.theme.FoodMeTheme
 
 class MainActivity : ComponentActivity() {
@@ -50,6 +51,10 @@ fun ThemeButtonsDemo() {
     ) {
         Text("Buttons Demo", style = MaterialTheme.typography.titleLarge)
 
+        AuthenticationButton(
+            buttonText = "Sign in with Google",
+            onRequestResult = {},
+        )
         Button(onClick = {}) {
             Text("Primary Button")
         }

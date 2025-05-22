@@ -5,7 +5,7 @@ OUTPUT_FILE="app/google-services.json"
 
 # Check if encrypted file exists
 if [ ! -f "$ENCRYPTED_FILE" ]; then
-  echo "❌ ERROR: Encrypted file '$ENCRYPTED_FILE' not found."
+  echo "ERROR: Encrypted file '$ENCRYPTED_FILE' not found."
   exit 1
 fi
 
@@ -22,8 +22,8 @@ echo "🔐 Decrypting $ENCRYPTED_FILE to $OUTPUT_FILE..."
 openssl aes-256-cbc -d -in "$ENCRYPTED_FILE" -out "$OUTPUT_FILE" -k "$PASSWORD"
 
 if [ $? -eq 0 ]; then
-  echo "✅ Decryption successful! File created at $OUTPUT_FILE"
+  echo "Decryption successful! File created at $OUTPUT_FILE"
 else
-  echo "❌ ERROR: Decryption failed. Check your password."
+  echo "ERROR: Decryption failed. Check your password."
   exit 1
 fi
