@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 internal val Project.libs: VersionCatalog
@@ -56,6 +57,7 @@ dependencies {
     implementation(libs.findLibrary("androidx-ui-tooling").get())
     implementation(libs.findLibrary("androidx-ui-tooling-preview").get())
     implementation(libs.findLibrary("androidx-material3").get())
+    implementation(libs.findLibrary("androidx-navigation-compose").get())
 
     implementation(libs.findLibrary("hilt").get())
     ksp(libs.findLibrary("hilt-ksp").get())

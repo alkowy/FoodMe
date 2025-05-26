@@ -5,6 +5,9 @@ plugins {
     id("com.google.gms.google-services")
     id(libs.plugins.devtools.ksp.get().pluginId)
     id(libs.plugins.hilt.get().pluginId)
+//    id(libs.plugins.kotlin.serialization.get().pluginId)
+    kotlin("plugin.serialization")
+
 }
 
 android {
@@ -48,6 +51,8 @@ dependencies {
     implementation(project(":authentication"))
     implementation(project(":core"))
     implementation(project(":meals"))
+    implementation(project(":profile"))
+    implementation(project(":home"))
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
@@ -57,6 +62,8 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.splashscreen)
 
     //todo probably remove
     implementation(libs.androidx.credentials)

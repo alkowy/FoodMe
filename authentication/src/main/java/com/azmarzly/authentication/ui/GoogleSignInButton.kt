@@ -24,6 +24,12 @@ import com.azmarzly.core.R
 import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption
 import kotlinx.coroutines.launch
 
+
+//todo remove
+@Composable
+fun AuthButtonWrapperTemp(modifier: Modifier = Modifier) {
+    AuthenticationButton("Sign in with Google", {})
+}
 @Composable
 fun AuthenticationButton(buttonText: String, onRequestResult: (Credential) -> Unit) {
     val context = LocalContext.current
@@ -51,7 +57,7 @@ fun AuthenticationButton(buttonText: String, onRequestResult: (Credential) -> Un
 
 private suspend fun launchCredManButtonUI(
     context: Context,
-    onRequestResult: (Credential) -> Unit
+    onRequestResult: (Credential) -> Unit,
 ) {
     try {
         val clientId = context.getString(com.azmarzly.authentication.R.string.default_web_client_id)

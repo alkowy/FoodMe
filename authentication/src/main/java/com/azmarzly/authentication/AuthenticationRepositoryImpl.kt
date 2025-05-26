@@ -34,9 +34,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
         TODO("Not yet implemented")
     }
 
-    override fun isSignedIn(): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun isSignedIn(): Boolean = firebaseAuth.currentUser != null
 
     override fun signUpWithEmailAndPassword(
         email: String,
