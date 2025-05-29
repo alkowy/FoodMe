@@ -1,4 +1,4 @@
-package com.azmarzly.foodme.ui.theme
+package com.azmarzly.core.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
