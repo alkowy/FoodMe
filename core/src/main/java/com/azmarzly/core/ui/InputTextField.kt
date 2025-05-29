@@ -85,7 +85,7 @@ fun InputTextField(
                     InputType.PASSWORD -> {
                         IconButton(onClick = { passwordVisible = !passwordVisible }) {
                             Icon(
-                                imageVector = if (passwordVisible) Icons.Filled.Star else Icons.Filled.Home,
+                                imageVector = if (passwordVisible) Icons.Filled.Star else Icons.Filled.Home,// todo fix get proper icons
                                 contentDescription = if (passwordVisible) "Hide password" else "Show password",
                                 tint = MaterialTheme.colorScheme.onSurfaceVariant
                             )
