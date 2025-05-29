@@ -8,13 +8,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
-import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
+import com.azmarzly.authentication.navigation.navigateToLoginScreen
 import com.azmarzly.foodme.navigation.TopLevelRoute
 import com.azmarzly.home.navigateToHome
-import com.azmarzly.profile.navigation.navigateToProfile
 import kotlinx.coroutines.CoroutineScope
 
 
@@ -63,17 +62,16 @@ class FoodMeAppState(
     val topLevelRoutes: List<TopLevelRoute> = TopLevelRoute.entries
 
     fun navigateToTopLevelDestination(topLevelRoute: TopLevelRoute) {
+        topLevelRoutes.filter { it != topLevelRoute }.forEach { graph ->
+            navController.popBackStack(graph.baseRoute, inclusive = true)
+        }
         val topLevelNavOptions = navOptions {
-            popUpTo(navController.graph.findStartDestination().id) {
-                saveState = true
-            }
             launchSingleTop = true
-            restoreState = true
         }
 
         when (topLevelRoute) {
             TopLevelRoute.HOME -> navController.navigateToHome(topLevelNavOptions)
-            TopLevelRoute.PROFILE -> navController.navigateToProfile(topLevelNavOptions)
+            TopLevelRoute.LOGIN -> navController.navigateToLoginScreen(topLevelNavOptions)
         }
     }
 }

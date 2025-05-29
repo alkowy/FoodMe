@@ -20,20 +20,27 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.azmarzly.authentication.ui.AuthButtonWrapperTemp
-import com.azmarzly.authentication.ui.AuthenticationButton
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
-    HomeScreenContent(modifier = modifier)
+fun HomeScreen(modifier: Modifier = Modifier, onNavigateToProfile: () -> Unit) {
+    HomeScreenContent(
+        modifier = modifier,
+        onNavigateToProfile = onNavigateToProfile,
+    )
 }
 
 @Composable
-fun HomeScreenContent(modifier: Modifier = Modifier) {
-    ThemeButtonsDemo()
+fun HomeScreenContent(
+    modifier: Modifier = Modifier,
+    onNavigateToProfile: () -> Unit,
+) {
+    ThemeButtonsDemo(onNavigateToProfile = onNavigateToProfile)
 }
 
 @Composable
-fun ThemeButtonsDemo() {
+fun ThemeButtonsDemo(
+    onNavigateToProfile: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -43,8 +50,8 @@ fun ThemeButtonsDemo() {
         Text("Buttons Demo", style = MaterialTheme.typography.titleLarge)
 
         AuthButtonWrapperTemp()
-        Button(onClick = {}) {
-            Text("Primary Button")
+        Button(onClick = onNavigateToProfile) {
+            Text("NAVIGATE TO PROFILE SKIBIDI")
         }
 
         OutlinedButton(onClick = {}) {

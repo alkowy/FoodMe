@@ -17,35 +17,39 @@ import com.azmarzly.foodme.ui.FoodMeAppState
 @Composable
 fun FoodMeApp(
     appState: FoodMeAppState,
+    startDestination: TopLevelRoute,
     modifier: Modifier = Modifier,
 ) {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        bottomBar = {
-            NavigationBar {
-                TopLevelRoute.entries.forEach { route ->
-                    val isSelected = appState.currentTopLevelDestination?.route == route.route
-                    NavigationBarItem(
-                        selected = isSelected,
-                        onClick = { appState.navigateToTopLevelDestination(route) },
-                        icon = {
-                            if (isSelected) {
-                                Icon(imageVector = route.selectedIcon, contentDescription = null)
-                            } else {
-                                Icon(imageVector = route.unselectedIcon, contentDescription = null)
-                            }
-                        },
-                    )
-                }
-            }
-        },
-        floatingActionButton = {
-            Button(onClick = {}) {
-                Text("FAB")
-            }
-        },
-        floatingActionButtonPosition = FabPosition.End
-    ) { innerPadding ->
-        FoodMeNavHost(appState = appState)
-    }
+//    Scaffold(
+//        modifier = Modifier.fillMaxSize(),
+//        bottomBar = {
+//            NavigationBar {
+//                TopLevelRoute.entries.forEach { route ->
+//                    val isSelected = appState.currentTopLevelDestination?.route == route.route
+//                    NavigationBarItem(
+//                        selected = isSelected,
+//                        onClick = { appState.navigateToTopLevelDestination(route) },
+//                        icon = {
+//                            if (isSelected) {
+//                                Icon(imageVector = route.selectedIcon, contentDescription = null)
+//                            } else {
+//                                Icon(imageVector = route.unselectedIcon, contentDescription = null)
+//                            }
+//                        },
+//                    )
+//                }
+//            }
+//        },
+//        floatingActionButton = {
+//            Button(onClick = {}) {
+//                Text("FAB")
+//            }
+//        },
+//        floatingActionButtonPosition = FabPosition.End
+//    ) { innerPadding ->
+    FoodMeNavHost(
+        appState = appState,
+        startDestination = startDestination,
+    )
+//    }
 }

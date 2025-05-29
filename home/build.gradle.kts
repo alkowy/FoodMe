@@ -9,4 +9,5 @@ android {
 
 dependencies {
     implementation(project(":authentication"))
+    implementation(project(":profile"))
 }
