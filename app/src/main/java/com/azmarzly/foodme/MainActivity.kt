@@ -1,6 +1,7 @@
 package com.azmarzly.foodme
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             val appState = rememberAppState()
+            val clientId = getString(R.string.default_web_client_id)
+            Log.d("ANANAS", "MainActivity.kt - onCreate: clientId in mainactivity $clientId")
             FoodMeTheme {
                 FoodMeApp(
                     appState = appState,
